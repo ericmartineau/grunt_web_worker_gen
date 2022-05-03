@@ -1,0 +1,53 @@
+targets:
+  $default:
+    builders:
+      grunt:
+        enabled: true
+      grunt_entry:
+        enabled: true
+
+builders:
+  grunt:
+    import: "package:grunt_web_worker_gen/build.dart"
+    builder_factories: [ "gruntBuilder" ]
+    runs_before: [ "grunt_web_worker_gen:grunt_entry" ]
+    build_extensions: { ".dart": [ ".grunt.dart" ] }
+    auto_apply: dependents
+    build_to: source
+    applies_builders: [ "source_gen" ]
+  grunt_entry:
+    import: "package:build_web_compilers/builders.dart"
+    builder_factories:
+      - webEntrypointBuilder
+    build_extensions:
+      .dart:
+        - .dart.bootstrap.js
+        - .dart.js
+        - .dart.js.map
+        - .dart.js.tar.gz
+        - .digests
+        - .merged_metadata
+    required_inputs:
+      - .dart
+      - .unsound.ddc.js
+      - .sound.ddc.js
+      - .ddc.module
+      - .dart2js.module
+    build_to: source
+    auto_apply: dependents
+    defaults:
+      generate_for:
+        include: [ "**/*.grunt.dart" ]
+      options:
+        compiler: dart2js
+        dart2js_args:
+          - -O0
+#       dev_options:
+
+#         dart2js_args:
+#           - --enable-asserts
+      release_options:
+#        compiler: dartdevc
+        compiler: dart2js
+    applies_builders:
+      - build_web_compilers|dart2js_archive_extractor

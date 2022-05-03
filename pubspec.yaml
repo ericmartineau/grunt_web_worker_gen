@@ -1,9 +1,9 @@
 name: grunt_web_worker_gen
-version: 0.7.2+15
+version: 0.8.2+15
 description: Generates web workers
 repository: https://github.com/ericmartineau/grunt_web_worker_gen
 environment: 
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: '>=2.16.0 <3.0.0'
 dependencies: 
   analyzer: ^4.0.0
   build: ^2.2.1

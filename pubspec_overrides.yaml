@@ -1,0 +1,10 @@
+# melos_managed_dependency_overrides: dartxx,flutter_degen,worker_service,flutter_degen_annotations
+dependency_overrides:
+  dartxx:
+    path: ../dartxx
+  flutter_degen:
+    path: ../flutter_degen
+  flutter_degen_annotations:
+    path: ../flutter_degen_annotations
+  worker_service:
+    path: ../worker_service

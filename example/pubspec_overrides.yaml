@@ -1,0 +1,40 @@
+# melos_managed_dependency_overrides: dartxx,flutter_chips_input_sunny,flutter_degen,flutter_degen_annotations,flutter_screen_scaling,grunt_web_worker_gen,meta_forms,observable_collections,pfile,sunny_core_widgets,sunny_dart,sunny_essentials,sunny_fluro,sunny_forms,sunny_platform_widgets,sunny_sdk_core,sunny_service_stubs,sunny_services,worker_service
+dependency_overrides:
+  dartxx:
+    path: ../../dartxx
+  flutter_chips_input_sunny:
+    path: ../../flutter_chips_input_sunny
+  flutter_degen:
+    path: ../../flutter_degen
+  flutter_degen_annotations:
+    path: ../../flutter_degen_annotations
+  flutter_screen_scaling:
+    path: ../../flutter_screen_scaling
+  grunt_web_worker_gen:
+    path: ..
+  meta_forms:
+    path: ../../meta_forms
+  observable_collections:
+    path: ../../observable_collections
+  pfile:
+    path: ../../pfile
+  sunny_core_widgets:
+    path: ../../sunny_core_widgets
+  sunny_dart:
+    path: ../../sunny_dart
+  sunny_essentials:
+    path: ../../sunny_essentials
+  sunny_fluro:
+    path: ../../sunny_fluro
+  sunny_forms:
+    path: ../../sunny_forms
+  sunny_platform_widgets:
+    path: ../../sunny_platform_widgets
+  sunny_sdk_core:
+    path: ../../sunny_sdk_core
+  sunny_service_stubs:
+    path: ../../sunny_service_stubs
+  sunny_services:
+    path: ../../sunny_services
+  worker_service:
+    path: ../../worker_service

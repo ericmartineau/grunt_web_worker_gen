@@ -7,7 +7,7 @@ class AncientParams {
   final int delayInMillis;
 
   const AncientParams({
-    @required this.delayInMillis,
+    required this.delayInMillis,
   });
 
   factory AncientParams.fromJson(map) {

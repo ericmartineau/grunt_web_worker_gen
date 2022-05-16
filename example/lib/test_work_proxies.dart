@@ -4,13 +4,13 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:pfile/pfile_api.dart';
-import 'package:sunny_services/upload_large_file.dart';
+import 'package:file_upload_service/upload_large_file.dart';
 import 'package:worker_service/work.dart';
 
 import 'ancient_task.dart';
 
 class TestWorkProxies extends StatefulWidget {
-  const TestWorkProxies({Key key}) : super(key: key);
+  const TestWorkProxies({Key? key}) : super(key: key);
 
   @override
   _TestWorkProxiesState createState() => _TestWorkProxiesState();
@@ -51,7 +51,7 @@ class _TestWorkProxiesState extends State<TestWorkProxies> {
                             _items.add(SupervisorAndArgs(
                                 supervisor,
                                 UploadFileParams.ofPFile(
-                                  file: PFile.of("/tmp/foo.file"),
+                                  file: PFile.of("/tmp/foo.file")!,
                                   keyName: "hell/foo",
                                 )));
                           });
@@ -96,14 +96,14 @@ class _TestWorkProxiesState extends State<TestWorkProxies> {
   }
 }
 
-typedef EmptyCallback = void Function(WorkPhase p);
+typedef EmptyCallback = void Function(WorkPhase? p);
 
 class JobTile extends StatelessWidget {
   final Supervisor supervisor;
-  final EmptyCallback onStop;
+  final EmptyCallback? onStop;
   final WorkStatus initialStatus;
 
-  JobTile({Key key, @required this.supervisor, this.onStop})
+  JobTile({Key? key, required this.supervisor, this.onStop})
       : initialStatus = supervisor.status,
         super(key: key);
 
@@ -114,9 +114,10 @@ class JobTile extends StatelessWidget {
         stream: supervisor.onStatus,
         initialData: initialStatus,
         builder: (context, snapshot) {
-          var phase = snapshot.data.phase;
-          var status = snapshot.data;
-          print("Rebuilding List tile with ${snapshot.data.phase}");
+          var status = snapshot.data!;
+          var phase = status.phase;
+
+          print("Rebuilding List tile with $phase");
           return ListTile(
             leading: CircleAvatar(
                 child: Text("${status.percentComplete?.round() ?? 0}")),
@@ -124,13 +125,16 @@ class JobTile extends StatelessWidget {
             subtitle: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(snapshot.data.phase.toString()),
-                if (status.message != null && status.message.isNotEmpty)
-                  Text(status.message,
+                Text(phase.toString()),
+                if (status.message != null && status.message!.isNotEmpty)
+                  Text(status.message!,
                       style: TextStyle(fontStyle: FontStyle.italic))
               ],
             ),
             trailing: MaterialButton(
+              onPressed: (phase == WorkPhase.stopped)
+                  ? null
+                  : (() => onStop?.call(phase)),
               child: (phase > WorkPhase.initializing)
                   ? (phase == WorkPhase.stopped)
                       ? Text("Stopped")
@@ -138,8 +142,6 @@ class JobTile extends StatelessWidget {
                   : (phase == WorkPhase.starting)
                       ? Text("Starting...")
                       : Text("Start"),
-              onPressed:
-                  (phase == WorkPhase.stopped) ? null : (() => onStop(phase)),
             ),
           );
         });

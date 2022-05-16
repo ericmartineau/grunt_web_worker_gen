@@ -7,14 +7,14 @@ packages:
       name: _fe_analyzer_shared
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "38.0.0"
+    version: "39.0.0"
   analyzer:
     dependency: "direct main"
     description:
       name: analyzer
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.4.1"
+    version: "4.0.0"
   archive:
     dependency: transitive
     description:
@@ -35,7 +35,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.8.1"
+    version: "2.9.0"
   bazel_worker:
     dependency: transitive
     description:
@@ -161,7 +161,7 @@ packages:
       name: collection
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.15.0"
+    version: "1.16.0"
   convert:
     dependency: transitive
     description:
@@ -196,13 +196,13 @@ packages:
       name: dartx
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.7.1"
+    version: "1.1.0"
   dartxx:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
-      name: dartxx
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "/Users/ericm/sunny/player_rank/packages/dartxx"
+      relative: false
+    source: path
     version: "0.5.5"
   equatable:
     dependency: transitive
@@ -228,17 +228,17 @@ packages:
   flutter_degen:
     dependency: "direct main"
     description:
-      name: flutter_degen
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.8.2"
+      path: "/Users/ericm/sunny/player_rank/packages/flutter_degen"
+      relative: false
+    source: path
+    version: "0.8.2+1"
   flutter_degen_annotations:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
-      name: flutter_degen_annotations
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.6.0"
+      path: "/Users/ericm/sunny/player_rank/packages/flutter_degen_annotations"
+      relative: false
+    source: path
+    version: "1.7.0"
   frontend_server_client:
     dependency: transitive
     description:
@@ -308,7 +308,7 @@ packages:
       name: js
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.3"
+    version: "0.6.4"
   json_annotation:
     dependency: transitive
     description:
@@ -371,7 +371,7 @@ packages:
       name: path
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.0"
+    version: "1.8.1"
   pedantic:
     dependency: "direct main"
     description:
@@ -606,9 +606,9 @@ packages:
   worker_service:
     dependency: "direct main"
     description:
-      name: worker_service
-      url: "https://pub.dartlang.org"
-    source: hosted
+      path: "/Users/ericm/sunny/player_rank/packages/worker_service"
+      relative: false
+    source: path
     version: "0.7.4"
   yaml:
     dependency: transitive

@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:worker_service/work.dart';
-import 'package:meta/meta.dart';
 
 class AncientParams {
   final int delayInMillis;

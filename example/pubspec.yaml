@@ -8,18 +8,18 @@ environment:
 dependencies: 
   build_web_compilers: ^3.2.3
   grunt_web_worker_gen: 
-    path: /Users/ericm/sunny/local_plugins/grunt_web_worker_gen
+    path: /Users/ericm/reliveit/checkout/ericmartineau/grunt_web_worker_gen
   worker_service: 
-    path: /Users/ericm/sunny/local_plugins/worker_service
+    path: /Users/ericm/reliveit/checkout/SunnyApp/worker_service
   file_upload_service: 
-    path: /Users/ericm/sunny/local_plugins/file_upload_service
+    path: /Users/ericm/reliveit/checkout/ericmartineau/file_upload_service
   pfile: 
-    path: /Users/ericm/sunny/local_plugins/pfile
+    path: /Users/ericm/reliveit/checkout/SunnyApp/pfile
   flutter: 
     sdk: flutter
 dev_dependencies: 
-  build_config: ^1.1.0
-  build_runner: ^2.2.1
+  build_config: ^1.1.1
+  build_runner: ^2.4.0
 flutter: 
   assets: 
     - ancient_task.grunt.dart.js
